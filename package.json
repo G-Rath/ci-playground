@@ -1,0 +1,84 @@
+{
+  "name": "ci-playground",
+  "version": "0.0.0",
+  "description": "A project",
+  "license": "ISC",
+  "author": "Gareth Jones",
+  "main": "src/index.tsx",
+  "scripts": {
+    "build": "cd ./configs && wp --config ./webpack.prod.ts",
+    "check": "tsc --noEmit",
+    "lint": "eslint **/*.ts **/*.tsx",
+    "serve": "cd ./configs && wp --config ./webpack.dev.ts",
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx",
+      "node"
+    ],
+    "moduleNameMapper": {
+      "^@src/(.*)$": "<rootDir>/src/$1",
+      "^@test/(.*)$": "<rootDir>/test/$1"
+    },
+    "resetMocks": true,
+    "restoreMocks": true,
+    "setupFilesAfterEnv": [
+      "./test/setupReactTestingLibrary.ts",
+      "./test/setupMuiThemeMock.ts"
+    ],
+    "testRunner": "jest-circus/runner",
+    "transform": {
+      "\\.tsx?": "ts-jest"
+    }
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.0.2",
+    "@material-ui/styles": "^4.0.2",
+    "core-js": "^3.1.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "use-persisted-state": "^0.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^8.0.1",
+    "@types/dotenv": "^6.1.1",
+    "@types/dotenv-webpack": "^1.7.0",
+    "@types/html-webpack-plugin": "^3.2.0",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^10.14.8",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "@types/use-persisted-state": "^0.3.0",
+    "@types/webpack": "^4.4.32",
+    "@types/webpack-merge": "^4.1.5",
+    "@types/webpack-plugin-serve": "^0.10.0",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^2.0.2",
+    "dotenv": "^8.0.0",
+    "dotenv-webpack": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-jest": "^22.6.4",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
+    "jest-circus": "^24.8.0",
+    "jest-dom": "^3.4.0",
+    "ts-import-plugin": "^1.5.5",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.5.1",
+    "webpack": "^4.32.2",
+    "webpack-merge": "^4.2.1",
+    "webpack-nano": "^0.6.1",
+    "webpack-plugin-serve": "^0.10.0"
+  }
+}
