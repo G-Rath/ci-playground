@@ -14,12 +14,12 @@ const defaultProps: Pick<Props, 'className'> = {
 
 export const AckamaLogo = (props: Props) => {
   const theme = useTheme<Theme>();
-
   return (
     theme.palette.type === 'dark'
       ? <AckamaLogoWhiteIcon className={props.className} />
       : <AckamaLogoGreenIcon className={props.className} />
   );
+
 };
 
 AckamaLogo.defaultProps = defaultProps;
